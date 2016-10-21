@@ -1,6 +1,7 @@
 package com.example.kristina.lab1;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -20,6 +21,8 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import static android.content.ClipData.newIntent;
+
 public class ListItemsActivity extends AppCompatActivity {
 
     //public CheckBox checked;
@@ -27,12 +30,19 @@ public class ListItemsActivity extends AppCompatActivity {
     public Switch theSwitch;
     static final int REQUEST_IMAGE_CAPTURE = 1;
     public ImageButton button1;
+    CharSequence textOn = "Switch is On";
+    CharSequence textOff = "Switch is Off";
+    int duration = Toast.LENGTH_SHORT;
+    Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_items);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +60,7 @@ public class ListItemsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-//                private void dispatchTakePictureIntent() {
+                    //dispatchTakePictureIntent(); });
                     Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
                         startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
@@ -129,7 +139,11 @@ public class ListItemsActivity extends AppCompatActivity {
             }
 
 
-
+//    private void dispatchTakePictureIntent() {
+//        Intent takePictureIntent = newIntent (MediaStore,ACTION_IMAGE_CAPTURE);
+//        if(takePictureIntent.resolveActivity(getPackageManager()) != null) {
+//            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+//    }
 
 
     protected static final String ACTIVITY_NAME = "ListItems Activity";

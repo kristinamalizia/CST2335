@@ -11,13 +11,20 @@
     tools:showIn="@layout/activity_list_items">
 
     <RadioButton
-        android:text="Button 1"/>
-    <CheckBox />
+        android:text="@string/button"
+
+        />
+    <CheckBox
+        android:text="@string/boxcheck"
+android:id="@+id/checkbox"       />
     <Switch
-        android:text="Enable Something"/>
+        android:text="@string/switchText"
+        android:id="@+id/switchbutton"/>
+
     <ImageButton
-        android:text="Button2"
-        android:background="@android:drawable/btn_star_big_on" />
+        android:text="@string/imageButtonText"
+        android:background="@android:drawable/btn_star_big_on"
+        android:id="@+id/button1"/>
 
 
 </GridLayout>
